@@ -39,7 +39,7 @@ public class CommentController {
 	
 	//edit comment
 		@PutMapping("/comments/{commentId}")
-		public ResponseEntity<CommentDto> updatePost(@RequestBody CommentDto commentDto,@PathVariable Integer commentId)
+		public ResponseEntity<CommentDto> editComment(@RequestBody CommentDto commentDto,@PathVariable Integer commentId)
 		{
 		CommentDto editedComment=this.commentService.editComment(commentDto, commentId);
 		return new ResponseEntity<CommentDto>(editedComment,HttpStatus.OK);
